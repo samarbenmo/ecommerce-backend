@@ -9,7 +9,12 @@ class Localisation extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'counry','city','zip_code'
+        'country','city','zip_code','id_shop'
         ];
+
+public function shop()
+{
+return $this->belongsTo(Shop::class);
+}
 
 }

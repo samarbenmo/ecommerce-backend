@@ -1,15 +1,19 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\STOCK_MANAGEMENT;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Produit extends Model
+class category extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'facebook_post_link','code','current_quantity','title','price','number_purchases'
+        'title_categ'
         ];
 
+public function product()
+{
+return $this->hasMany(Product::class);
+}
 }

@@ -1,15 +1,19 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\CRM;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class lignedecommande extends Model
+class Socialmedia extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'quantity','totalHT','totalTTC'
+        'type_sm','link'
         ];
 
+public function profile()
+{
+return $this->hasOne(Profile::class);
+}
 }
